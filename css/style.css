@@ -43,10 +43,10 @@ a {
     z-index: 1000;
 }
 
-.logo {
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: -2px;
+.logo img {
+    width: 55px;
+    height: auto;
+    display: block;
 }
 
 .logo span,
