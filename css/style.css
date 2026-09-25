@@ -1,0 +1,534 @@
+/* =========================
+   CARRINHO
+========================= */
+
+.botao-carrinho {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 58px;
+    height: 58px;
+
+    border: none;
+
+    background: #39ff14;
+    color: #000;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 2000;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+
+    transition: 0.3s;
+}
+
+.botao-carrinho:hover {
+    transform: scale(1.08);
+    background: #fff;
+}
+
+#contador-carrinho {
+    position: absolute;
+
+    top: -5px;
+    right: -5px;
+
+    width: 22px;
+    height: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff;
+    color: #000;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+
+/* OVERLAY */
+
+.carrinho-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 3000;
+}
+
+.carrinho-overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* CARRINHO */
+
+.carrinho {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 430px;
+    max-width: 100%;
+
+    height: 100%;
+
+    background: #0b0b0b;
+
+    border-left: 1px solid #222;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(100%);
+
+    transition: 0.35s;
+}
+
+.carrinho-overlay.ativo .carrinho {
+    transform: translateX(0);
+}
+
+
+/* HEADER */
+
+.carrinho-header {
+    padding: 25px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #222;
+}
+
+.carrinho-label {
+    color: #39ff14;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.carrinho-header h2 {
+    margin-top: 5px;
+
+    font-size: 25px;
+
+    letter-spacing: -1px;
+}
+
+.fechar-carrinho {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid #333;
+
+    background: transparent;
+    color: #fff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.fechar-carrinho:hover {
+    background: #39ff14;
+    color: #000;
+}
+
+
+/* ITENS */
+
+.carrinho-itens {
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px;
+}
+
+.item-carrinho {
+    position: relative;
+
+    display: flex;
+
+    gap: 15px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #222;
+}
+
+.item-carrinho img {
+    width: 80px;
+    height: 80px;
+
+    object-fit: cover;
+
+    background: #151515;
+}
+
+.item-carrinho-info {
+    flex: 1;
+}
+
+.item-carrinho-info h3 {
+    font-size: 13px;
+
+    margin-bottom: 6px;
+
+    padding-right: 20px;
+}
+
+.item-carrinho-info span {
+    display: block;
+
+    color: #777;
+
+    font-size: 11px;
+
+    margin-bottom: 7px;
+}
+
+.item-carrinho-info strong {
+    font-size: 13px;
+}
+
+
+/* QUANTIDADE */
+
+.controle-quantidade {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 12px;
+}
+
+.controle-quantidade button {
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid #333;
+
+    background: transparent;
+    color: #fff;
+
+    cursor: pointer;
+}
+
+.controle-quantidade button:hover {
+    border-color: #39ff14;
+    color: #39ff14;
+}
+
+.controle-quantidade span {
+    margin: 0;
+
+    color: #fff;
+}
+
+
+/* REMOVER */
+
+.remover-item {
+    position: absolute;
+
+    top: 15px;
+    right: 0;
+
+    border: none;
+
+    background: transparent;
+    color: #666;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.remover-item:hover {
+    color: #ff4444;
+}
+
+
+/* VAZIO */
+
+.carrinho-vazio {
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.carrinho-vazio-icon {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.carrinho-vazio h3 {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.carrinho-vazio p {
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* FOOTER */
+
+.carrinho-footer {
+    padding: 20px;
+
+    border-top: 1px solid #222;
+}
+
+.carrinho-total {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.carrinho-total span {
+    color: #777;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.carrinho-total strong {
+    font-size: 20px;
+}
+
+
+/* BOTÃO FINALIZAR */
+
+.btn-finalizar {
+    width: 100%;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+}
+
+.limpar-carrinho {
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 10px;
+
+    border: none;
+
+    background: transparent;
+    color: #666;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.limpar-carrinho:hover {
+    color: #fff;
+}
+
+
+/* =========================
+   SELEÇÃO DE PRODUTO
+========================= */
+
+.selecao-produto {
+    margin-bottom: 25px;
+}
+
+.selecao-produto label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #777;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.tamanhos {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 25px;
+}
+
+.tamanho {
+    width: 48px;
+    height: 45px;
+
+    border: 1px solid #333;
+
+    background: transparent;
+    color: #fff;
+
+    font-family: inherit;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.tamanho:hover,
+.tamanho.selecionado {
+    background: #39ff14;
+    border-color: #39ff14;
+
+    color: #000;
+}
+
+
+/* QUANTIDADE DO PRODUTO */
+
+.quantidade-produto {
+    display: flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    border: 1px solid #333;
+}
+
+.quantidade-produto button {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+    color: #fff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.quantidade-produto button:hover {
+    color: #39ff14;
+}
+
+.quantidade-produto span {
+    width: 40px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* COMPRAR AGORA */
+
+.btn-comprar-agora {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+    border: 1px solid #333;
+
+    background: transparent;
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-comprar-agora:hover {
+    border-color: #39ff14;
+
+    color: #39ff14;
+}
+
+
+/* =========================
+   CARRINHO CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    .botao-carrinho {
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .carrinho {
+        width: 100%;
+    }
+
+    .carrinho-header {
+        padding: 20px;
+    }
+
+    .carrinho-itens {
+        padding: 15px;
+    }
+
+    .carrinho-footer {
+        padding: 15px;
+    }
+
+}
