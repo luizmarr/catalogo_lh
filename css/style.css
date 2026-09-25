@@ -346,16 +346,15 @@ a {
     }
 
     .menu {
-        width: 100%;
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+}
 
-        justify-content: center;
-
-        gap: 20px;
-    }
-
-    .menu a {
-    font-size: 15px;
+.menu a {
+    font-size: 17px;
     font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
     /* HERO */
