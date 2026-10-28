@@ -1,500 +1,67 @@
 
-/* ==========================================
-   LH MULTIMARCAS
-   Identidade visual: Preto e Branco
-========================================== */
+/* ===== CORREÇÃO DOS DETALHES VERDES ===== */
 
-/* 1. Variáveis da identidade visual */
-:root {
-    --preto: #050505;
-    --preto-suave: #0c0c0c;
-    --card: #111111;
-    --card-hover: #181818;
-    --branco: #ffffff;
-    --cinza: #b5b5b5;
-    --cinza-escuro: #292929;
-    --borda: #242424;
-    --largura-maxima: 1200px;
+/* Textos e frases */
+p,
+span,
+strong,
+em,
+small,
+h1,
+h2,
+h3,
+h4,
+.texto,
+.subtitulo,
+.subtitle {
+    color: #ffffff !important;
 }
 
-/* 2. Reset e configurações gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Links e navegação */
+a,
+nav a,
+header a,
+footer a {
+    color: #ffffff !important;
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
-
-body {
-    font-family: "Inter", Arial, sans-serif;
-    background: var(--preto);
-    color: var(--branco);
-    line-height: 1.6;
-    min-height: 100vh;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button,
-input,
-textarea,
-select {
-    font: inherit;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-::selection {
-    background: var(--branco);
-    color: var(--preto);
-}
-
-/* 3. Cabeçalho */
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    width: 100%;
-    background: rgba(5, 5, 5, 0.96);
-    border-bottom: 1px solid var(--borda);
-    backdrop-filter: blur(12px);
-}
-
-header > * {
-    max-width: var(--largura-maxima);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-header img {
-    width: 55px;
-    height: auto;
-    object-fit: contain;
-}
-
-header nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    flex-wrap: wrap;
-    padding: 16px 20px;
-}
-
-header nav a,
-nav a {
-    color: var(--branco) !important;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.25s ease;
-}
-
-header nav a:hover,
-nav a:hover {
-    color: var(--cinza) !important;
-}
-
-/* 4. Banner principal */
-.hero {
-    min-height: 520px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 80px 24px;
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.70),
-            rgba(0, 0, 0, 0.90)
-        ),
-        url("../imagens/logo.lh.png") center / cover no-repeat,
-        var(--preto-suave);
-    border-bottom: 1px solid var(--borda);
-}
-
-.hero h1 {
-    max-width: 900px;
-    margin: 12px auto 20px;
-    color: var(--branco);
-    font-size: clamp(2.2rem, 6vw, 4.8rem);
-    line-height: 1.08;
-    font-weight: 900;
-    letter-spacing: -2px;
-    text-transform: uppercase;
-}
-
-.hero p {
-    color: var(--cinza);
-    font-size: 1rem;
-    max-width: 600px;
-    margin-bottom: 28px;
-}
-
-.hero .subtitulo,
-.hero .subtitle {
-    color: var(--branco);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 5px;
-}
-
-/* 5. Botões */
+/* Botões */
 button,
 .btn,
 .botao,
+a.btn,
+a.botao,
 .hero a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 46px;
-    padding: 12px 24px;
-    background: var(--branco);
-    color: var(--preto) !important;
-    border: 1px solid var(--branco);
-    border-radius: 2px;
-    font-weight: 800;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
+    background-color: #ffffff !important;
+    color: #050505 !important;
+    border-color: #ffffff !important;
 }
 
+/* Efeito ao passar o mouse */
 button:hover,
 .btn:hover,
 .botao:hover,
+a.btn:hover,
+a.botao:hover,
 .hero a:hover {
-    background: transparent;
-    color: var(--branco) !important;
-    transform: translateY(-2px);
+    background-color: #050505 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
 }
 
-/* 6. Seções gerais */
-section {
-    padding: 80px 24px;
+/* Ícones e preços */
+i,
+.preco,
+.preco-produto {
+    color: #ffffff !important;
 }
 
-section h2 {
-    margin-bottom: 16px;
-    color: var(--branco);
-    font-size: clamp(1.7rem, 4vw, 2.5rem);
-    font-weight: 800;
-    line-height: 1.2;
-    text-transform: uppercase;
-}
-
-section p {
-    color: var(--cinza);
-}
-
-/* 7. Catálogo */
-#catalogo {
-    background: var(--preto);
-    max-width: none;
-}
-
-#catalogo h2 {
-    max-width: var(--largura-maxima);
-    margin: 0 auto 32px;
-}
-
-#produtos {
-    width: 100%;
-    max-width: var(--largura-maxima);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 22px;
-    color: var(--branco);
-}
-
-/* Cartões: nomes comuns usados no projeto */
+/* Evita efeitos verdes nas bordas */
+button,
+a,
 .produto,
 .card-produto,
-.produto-card,
-.product-card {
-    min-width: 0;
-    overflow: hidden;
-    background: var(--card);
-    color: var(--branco);
-    border: 1px solid var(--borda);
-    border-radius: 4px;
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
+.produto-card {
+    outline-color: #ffffff;
 }
 
-.produto:hover,
-.card-produto:hover,
-.produto-card:hover,
-.product-card:hover {
-    transform: translateY(-5px);
-    background: var(--card-hover);
-    border-color: #777777;
-}
-
-.produto img,
-.card-produto img,
-.produto-card img,
-.product-card img {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    background: var(--card);
-}
-
-.produto h3,
-.card-produto h3,
-.produto-card h3,
-.product-card h3 {
-    padding: 14px 14px 4px;
-    color: var(--branco);
-    font-size: 1rem;
-}
-
-.produto p,
-.card-produto p,
-.produto-card p,
-.product-card p {
-    padding: 0 14px 12px;
-    color: var(--cinza);
-    font-size: 0.9rem;
-}
-
-.preco,
-.preco-produto,
-.preco-produto strong {
-    color: var(--branco) !important;
-    font-weight: 800;
-}
-
-.categoria {
-    color: var(--cinza) !important;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Catálogo vazio */
-.catalogo-vazio {
-    grid-column: 1 / -1;
-    padding: 50px 20px;
-    text-align: center;
-    background: var(--card);
-    border: 1px solid var(--borda);
-}
-
-.catalogo-vazio p {
-    color: var(--branco);
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-/* 8. Página de detalhes do produto */
-.pagina-produto {
-    max-width: var(--largura-maxima);
-    margin: 0 auto;
-    padding: 60px 24px;
-}
-
-.produto-detalhes {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 48px;
-    align-items: start;
-}
-
-.produto-detalhes img {
-    width: 100%;
-    border: 1px solid var(--borda);
-    background: var(--card);
-}
-
-.produto-detalhes h1,
-.produto-detalhes h2 {
-    color: var(--branco);
-    margin-bottom: 16px;
-}
-
-.produto-detalhes p {
-    color: var(--cinza);
-    margin-bottom: 18px;
-}
-
-/* 9. Sobre a loja */
-#sobre {
-    background: var(--preto-suave);
-    border-top: 1px solid var(--borda);
-    border-bottom: 1px solid var(--borda);
-}
-
-#sobre > * {
-    max-width: var(--largura-maxima);
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#sobre p {
-    max-width: 760px;
-    font-size: 1rem;
-    line-height: 1.9;
-}
-
-/* 10. Contato */
-#contato {
-    background: var(--preto);
-}
-
-#contato a {
-    color: var(--branco);
-    transition: color 0.25s ease;
-}
-
-#contato a:hover {
-    color: var(--cinza);
-    text-decoration: underline;
-}
-
-/* 11. Rodapé */
-footer {
-    padding: 25px 20px;
-    background: #000000;
-    color: var(--cinza);
-    border-top: 1px solid var(--borda);
-    text-align: center;
-    font-size: 0.85rem;
-}
-
-footer p {
-    color: var(--cinza);
-}
-
-/* 12. Campos de formulário, caso existam */
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 12px 14px;
-    background: var(--card);
-    color: var(--branco);
-    border: 1px solid var(--cinza-escuro);
-    border-radius: 2px;
-    outline: none;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    border-color: var(--branco);
-}
-
-input::placeholder,
-textarea::placeholder {
-    color: #888888;
-}
-
-/* 13. Tablet */
-@media (max-width: 1000px) {
-    #produtos {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .hero {
-        min-height: 440px;
-    }
-
-    section {
-        padding: 65px 22px;
-    }
-}
-
-/* 14. Celular */
-@media (max-width: 700px) {
-    header nav {
-        gap: 14px;
-        padding: 14px 12px;
-    }
-
-    header nav a,
-    nav a {
-        font-size: 0.8rem;
-    }
-
-    .hero {
-        min-height: 400px;
-        padding: 65px 20px;
-    }
-
-    .hero h1 {
-        letter-spacing: -1px;
-    }
-
-    .hero .subtitulo,
-    .hero .subtitle {
-        letter-spacing: 3px;
-    }
-
-    #produtos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    section {
-        padding: 50px 16px;
-    }
-
-    .produto-detalhes {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .pagina-produto {
-        padding: 35px 16px;
-    }
-}
-
-/* 15. Celulares pequenos */
-@media (max-width: 380px) {
-    #produtos {
-        grid-template-columns: 1fr;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    header nav {
-        gap: 10px;
-    }
-}
-
-/* 16. Acessibilidade: respeitar redução de movimento */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-    }
-}
