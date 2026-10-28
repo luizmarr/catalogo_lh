@@ -1,5 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
+/* ==========================================
+   LH MULTIMARCAS
+   Identidade visual: Preto e Branco
+========================================== */
+
+/* 1. Variáveis da identidade visual */
+:root {
+    --preto: #050505;
+    --preto-suave: #0c0c0c;
+    --card: #111111;
+    --card-hover: #181818;
+    --branco: #ffffff;
+    --cinza: #b5b5b5;
+    --cinza-escuro: #292929;
+    --borda: #242424;
+    --largura-maxima: 1200px;
+}
+
+/* 2. Reset e configurações gerais */
 * {
     margin: 0;
     padding: 0;
@@ -8,905 +26,475 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: #050505;
-    color: #fff;
-    overflow-x: hidden;
+    font-family: "Inter", Arial, sans-serif;
+    background: var(--preto);
+    color: var(--branco);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
-/* =========================
-   HEADER
-========================= */
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
 
-.header {
-    width: 100%;
-    height: 78px;
-    padding: 0 7%;
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+::selection {
+    background: var(--branco);
+    color: var(--preto);
+}
 
-    background: rgba(5, 5, 5, 0.96);
-    border-bottom: 1px solid #1b1b1b;
-
+/* 3. Cabeçalho */
+header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
+    background: rgba(5, 5, 5, 0.96);
+    border-bottom: 1px solid var(--borda);
+    backdrop-filter: blur(12px);
 }
 
-.logo img {
+header > * {
+    max-width: var(--largura-maxima);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header img {
     width: 55px;
     height: auto;
-    display: block;
+    object-fit: contain;
 }
 
-.logo span,
-.footer-logo span {
-    color: #39ff14;
-}
-
-.menu {
+header nav {
     display: flex;
     align-items: center;
-    gap: 35px;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    padding: 16px 20px;
 }
 
-.menu a {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
+header nav a,
+nav a {
+    color: var(--branco) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
 }
 
-.menu a::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    bottom: -7px;
-
-    width: 0;
-    height: 2px;
-
-    background: #39ff14;
-
-    transition: 0.3s;
+header nav a:hover,
+nav a:hover {
+    color: var(--cinza) !important;
 }
 
-.menu a:hover {
-    color: #39ff14;
-}
-
-.menu a:hover::after {
-    width: 100%;
-}
-
-/* =========================
-   HERO
-========================= */
-
+/* 4. Banner principal */
 .hero {
-    min-height: 650px;
-
+    min-height: 520px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-
-    padding: 80px 7%;
-
+    text-align: center;
+    padding: 80px 24px;
     background:
         linear-gradient(
-            90deg,
-            #050505 0%,
-            rgba(5, 5, 5, 0.9) 40%,
-            rgba(5, 5, 5, 0.35) 100%
+            rgba(0, 0, 0, 0.70),
+            rgba(0, 0, 0, 0.90)
         ),
-        url("../imagens/banner.jpg");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-content {
-    max-width: 680px;
-}
-
-.hero-subtitle {
-    color: #39ff14;
-
-    font-size: 13px;
-    font-weight: 800;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 20px;
+        url("../imagens/logo.lh.png") center / cover no-repeat,
+        var(--preto-suave);
+    border-bottom: 1px solid var(--borda);
 }
 
 .hero h1 {
-    font-size: clamp(45px, 7vw, 90px);
-
-    line-height: 0.95;
-
+    max-width: 900px;
+    margin: 12px auto 20px;
+    color: var(--branco);
+    font-size: clamp(2.2rem, 6vw, 4.8rem);
+    line-height: 1.08;
     font-weight: 900;
-
-    letter-spacing: -4px;
-
-    margin-bottom: 25px;
+    letter-spacing: -2px;
+    text-transform: uppercase;
 }
 
-.hero-content > p:not(.hero-subtitle) {
-    max-width: 500px;
-
-    color: #b8b8b8;
-
-    font-size: 16px;
-    line-height: 1.7;
-
-    margin-bottom: 35px;
+.hero p {
+    color: var(--cinza);
+    font-size: 1rem;
+    max-width: 600px;
+    margin-bottom: 28px;
 }
 
-/* =========================
-   BOTÃO
-========================= */
+.hero .subtitulo,
+.hero .subtitle {
+    color: var(--branco);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+}
 
-.btn {
-    display: inline-block;
-
-    padding: 15px 28px;
-
-    background: #39ff14;
-    color: #000;
-
-    font-size: 12px;
+/* 5. Botões */
+button,
+.btn,
+.botao,
+.hero a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 12px 24px;
+    background: var(--branco);
+    color: var(--preto) !important;
+    border: 1px solid var(--branco);
+    border-radius: 2px;
     font-weight: 800;
-
-    letter-spacing: 1px;
-
-    transition: 0.3s;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.btn:hover {
-    background: #fff;
+button:hover,
+.btn:hover,
+.botao:hover,
+.hero a:hover {
+    background: transparent;
+    color: var(--branco) !important;
     transform: translateY(-2px);
 }
 
-/* =========================
-   CATÁLOGO
-========================= */
-
-.catalogo {
-    padding: 100px 7%;
+/* 6. Seções gerais */
+section {
+    padding: 80px 24px;
 }
 
-.section-title {
-    margin-bottom: 50px;
-}
-
-.section-title p {
-    color: #39ff14;
-
-    font-size: 12px;
+section h2 {
+    margin-bottom: 16px;
+    color: var(--branco);
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
     font-weight: 800;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 8px;
-}
-
-.section-title h2 {
-    font-size: 42px;
-
-    font-weight: 900;
-
-    letter-spacing: -2px;
-}
-
-.produtos {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 22px;
-}
-
-/* =========================
-   SOBRE
-========================= */
-
-.sobre {
-    padding: 120px 7%;
-
-    background: #0b0b0b;
-
-    border-top: 1px solid #1b1b1b;
-    border-bottom: 1px solid #1b1b1b;
-}
-
-.sobre-content {
-    max-width: 750px;
-}
-
-.sobre-content > p:first-child {
-    color: #39ff14;
-
-    font-size: 12px;
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 20px;
-}
-
-.sobre h2 {
-    font-size: clamp(35px, 5vw, 65px);
-
-    line-height: 1;
-
-    letter-spacing: -3px;
-
-    margin-bottom: 30px;
-}
-
-.sobre-content > p:last-child {
-    max-width: 600px;
-
-    color: #999;
-
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer {
-    padding: 45px 7%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: #050505;
-}
-
-.footer-logo {
-    font-size: 25px;
-    font-weight: 900;
-    letter-spacing: -2px;
-}
-
-.footer p {
-    color: #666;
-
-    font-size: 12px;
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 1000px) {
-
-    .header {
-        padding: 0 5%;
-    }
-
-    .hero {
-        padding: 80px 5%;
-    }
-
-    .catalogo {
-        padding: 80px 5%;
-    }
-
-    .produtos {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .sobre {
-        padding: 90px 5%;
-    }
-
-    .footer {
-        padding: 40px 5%;
-    }
-}
-
-/* =========================
-   CELULAR
-========================= */
-
-@media (max-width: 700px) {
-
-    /* HEADER */
-
-    .header {
-        height: auto;
-        min-height: 70px;
-
-        padding: 18px 5%;
-
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .logo {
-        font-size: 25px;
-    }
-
-    .menu {
-    width: 100%;
-    justify-content: center;
-    gap: 25px;
-}
-
-.menu a {
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-}
-
-    /* HERO */
-
-    .hero {
-        min-height: 600px;
-
-        padding: 70px 6%;
-
-        background:
-            linear-gradient(
-                90deg,
-                rgba(5, 5, 5, 0.92),
-                rgba(5, 5, 5, 0.65)
-            ),
-            url("../imagens/banner.jpg");
-
-        background-position: center;
-    }
-
-    .hero-content {
-        width: 100%;
-    }
-
-    .hero-subtitle {
-        font-size: 11px;
-
-        letter-spacing: 3px;
-    }
-
-    .hero h1 {
-        font-size: clamp(42px, 13vw, 65px);
-
-        letter-spacing: -3px;
-    }
-
-    .hero-content > p:not(.hero-subtitle) {
-        font-size: 14px;
-
-        line-height: 1.6;
-    }
-
-    .btn {
-        width: 100%;
-
-        text-align: center;
-
-        padding: 17px 20px;
-    }
-
-    /* CATÁLOGO */
-
-    .catalogo {
-        padding: 70px 5%;
-    }
-
-    .section-title {
-        margin-bottom: 30px;
-    }
-
-    .section-title h2 {
-        font-size: 34px;
-    }
-
-    .produtos {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 12px;
-    }
-
-    /* SOBRE */
-
-    .sobre {
-        padding: 80px 6%;
-    }
-
-    .sobre h2 {
-        font-size: 38px;
-
-        letter-spacing: -2px;
-    }
-
-    .sobre-content > p:last-child {
-        font-size: 14px;
-    }
-
-    /* FOOTER */
-
-    .footer {
-        padding: 35px 5%;
-
-        flex-direction: column;
-
-        gap: 15px;
-
-        text-align: center;
-    }
-}
-
-/* =========================
-   CELULAR PEQUENO
-========================= */
-
-@media (max-width: 400px) {
-
-    .header {
-        padding: 15px 4%;
-    }
-
-    .menu {
-        gap: 12px;
-    }
-
-    .menu a {
-    font-size: 13px;
-    font-weight: 600;
-}
-    .hero {
-        min-height: 560px;
-
-        padding: 60px 5%;
-    }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero-content > p:not(.hero-subtitle) {
-        font-size: 13px;
-    }
-
-    .catalogo {
-        padding: 60px 4%;
-    }
-
-    .produtos {
-        gap: 10px;
-    }
-
-    .section-title h2 {
-        font-size: 30px;
-    }
-}
-
-/* =========================
-   CARDS DE PRODUTOS
-========================= */
-
-.produto-card {
-    background: #0b0b0b;
-
-    border: 1px solid #1b1b1b;
-
-    overflow: hidden;
-
-    transition: 0.3s;
-}
-
-.produto-card:hover {
-    transform: translateY(-5px);
-
-    border-color: #39ff14;
-}
-
-.produto-link {
-    display: block;
-}
-
-.produto-imagem {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-
-    background: #151515;
-
-    overflow: hidden;
-}
-
-.produto-imagem img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition: 0.5s;
-}
-
-.produto-card:hover .produto-imagem img {
-    transform: scale(1.05);
-}
-
-.produto-info {
-    padding: 18px;
-}
-
-.produto-categoria {
-    display: block;
-
-    color: #39ff14;
-
-    font-size: 9px;
-    font-weight: 800;
-
+    line-height: 1.2;
     text-transform: uppercase;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 8px;
 }
 
-.produto-info h3 {
-    color: #fff;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    margin-bottom: 12px;
+section p {
+    color: var(--cinza);
 }
 
-.produto-info strong {
-    color: #fff;
+/* 7. Catálogo */
+#catalogo {
+    background: var(--preto);
+    max-width: none;
+}
 
-    font-size: 16px;
+#catalogo h2 {
+    max-width: var(--largura-maxima);
+    margin: 0 auto 32px;
+}
+
+#produtos {
+    width: 100%;
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    color: var(--branco);
+}
+
+/* Cartões: nomes comuns usados no projeto */
+.produto,
+.card-produto,
+.produto-card,
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--card);
+    color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.produto:hover,
+.card-produto:hover,
+.produto-card:hover,
+.product-card:hover {
+    transform: translateY(-5px);
+    background: var(--card-hover);
+    border-color: #777777;
+}
+
+.produto img,
+.card-produto img,
+.produto-card img,
+.product-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: var(--card);
+}
+
+.produto h3,
+.card-produto h3,
+.produto-card h3,
+.product-card h3 {
+    padding: 14px 14px 4px;
+    color: var(--branco);
+    font-size: 1rem;
+}
+
+.produto p,
+.card-produto p,
+.produto-card p,
+.product-card p {
+    padding: 0 14px 12px;
+    color: var(--cinza);
+    font-size: 0.9rem;
+}
+
+.preco,
+.preco-produto,
+.preco-produto strong {
+    color: var(--branco) !important;
     font-weight: 800;
 }
 
-@media (max-width: 700px) {
-
-    .produto-info {
-        padding: 13px;
-    }
-
-    .produto-info h3 {
-        font-size: 12px;
-    }
-
-    .produto-info strong {
-        font-size: 14px;
-    }
-
-    .produto-categoria {
-        font-size: 8px;
-    }
+.categoria {
+    color: var(--cinza) !important;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* =========================
-   PÁGINA DO PRODUTO
-========================= */
+/* Catálogo vazio */
+.catalogo-vazio {
+    grid-column: 1 / -1;
+    padding: 50px 20px;
+    text-align: center;
+    background: var(--card);
+    border: 1px solid var(--borda);
+}
 
+.catalogo-vazio p {
+    color: var(--branco);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* 8. Página de detalhes do produto */
 .pagina-produto {
-    min-height: calc(100vh - 158px);
-
-    padding: 100px 7%;
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
+    padding: 60px 24px;
 }
 
 .produto-detalhes {
-    max-width: 1200px;
-
-    margin: 0 auto;
-
     display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 70px;
-
-    align-items: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+    align-items: start;
 }
 
-.produto-detalhes-imagem {
+.produto-detalhes img {
     width: 100%;
-
-    aspect-ratio: 1 / 1;
-
-    background: #111;
-
-    overflow: hidden;
+    border: 1px solid var(--borda);
+    background: var(--card);
 }
 
-.produto-detalhes-imagem img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
+.produto-detalhes h1,
+.produto-detalhes h2 {
+    color: var(--branco);
+    margin-bottom: 16px;
 }
 
-.produto-detalhes-info {
-    max-width: 500px;
+.produto-detalhes p {
+    color: var(--cinza);
+    margin-bottom: 18px;
 }
 
-.produto-detalhes-categoria {
-    display: block;
-
-    color: #39ff14;
-
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-    text-transform: uppercase;
-
-    margin-bottom: 15px;
+/* 9. Sobre a loja */
+#sobre {
+    background: var(--preto-suave);
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
 }
 
-.produto-detalhes-info h1 {
-    font-size: clamp(35px, 5vw, 60px);
-
-    line-height: 1;
-
-    letter-spacing: -3px;
-
-    margin-bottom: 25px;
+#sobre > * {
+    max-width: var(--largura-maxima);
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.produto-detalhes-preco {
-    font-size: 25px;
-
-    font-weight: 800;
-
-    margin-bottom: 25px;
+#sobre p {
+    max-width: 760px;
+    font-size: 1rem;
+    line-height: 1.9;
 }
 
-.produto-detalhes-descricao {
-    color: #999;
-
-    font-size: 15px;
-
-    line-height: 1.8;
-
-    margin-bottom: 35px;
+/* 10. Contato */
+#contato {
+    background: var(--preto);
 }
 
-.btn-whatsapp {
-    width: 100%;
+#contato a {
+    color: var(--branco);
+    transition: color 0.25s ease;
+}
 
+#contato a:hover {
+    color: var(--cinza);
+    text-decoration: underline;
+}
+
+/* 11. Rodapé */
+footer {
+    padding: 25px 20px;
+    background: #000000;
+    color: var(--cinza);
+    border-top: 1px solid var(--borda);
     text-align: center;
+    font-size: 0.85rem;
 }
 
-.voltar-catalogo {
-    display: block;
-
-    margin-top: 20px;
-
-    color: #777;
-
-    font-size: 12px;
-
-    transition: 0.3s;
+footer p {
+    color: var(--cinza);
 }
 
-.voltar-catalogo:hover {
-    color: #39ff14;
+/* 12. Campos de formulário, caso existam */
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--card);
+    color: var(--branco);
+    border: 1px solid var(--cinza-escuro);
+    border-radius: 2px;
+    outline: none;
 }
 
-.produto-nao-encontrado {
-    min-height: 500px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 25px;
-
-    text-align: center;
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--branco);
 }
 
-/* =========================
-   PRODUTO NO CELULAR
-========================= */
+input::placeholder,
+textarea::placeholder {
+    color: #888888;
+}
 
+/* 13. Tablet */
+@media (max-width: 1000px) {
+    #produtos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .hero {
+        min-height: 440px;
+    }
+
+    section {
+        padding: 65px 22px;
+    }
+}
+
+/* 14. Celular */
 @media (max-width: 700px) {
+    header nav {
+        gap: 14px;
+        padding: 14px 12px;
+    }
 
-    .pagina-produto {
-        padding: 50px 5%;
+    header nav a,
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 65px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero .subtitulo,
+    .hero .subtitle {
+        letter-spacing: 3px;
+    }
+
+    #produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    section {
+        padding: 50px 16px;
     }
 
     .produto-detalhes {
         grid-template-columns: 1fr;
-
-        gap: 35px;
+        gap: 24px;
     }
 
-    .produto-detalhes-info {
-        max-width: 100%;
-    }
-
-    .produto-detalhes-info h1 {
-        font-size: 38px;
-
-        letter-spacing: -2px;
-    }
-
-    .produto-detalhes-preco {
-        font-size: 22px;
-    }
-
-    .produto-detalhes-descricao {
-        font-size: 14px;
+    .pagina-produto {
+        padding: 35px 16px;
     }
 }
 
-/* =========================
-   CONTATO
-========================= */
-
-.contato {
-    padding: 120px 7%;
-
-    background: #050505;
-}
-
-.contato-content {
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 80px;
-
-    align-items: center;
-}
-
-.contato-label {
-    color: #39ff14;
-
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 20px;
-}
-
-.contato h2 {
-    font-size: clamp(45px, 6vw, 75px);
-
-    line-height: 0.95;
-
-    letter-spacing: -4px;
-
-    margin-bottom: 25px;
-}
-
-.contato-texto > p:last-child {
-    max-width: 450px;
-
-    color: #888;
-
-    font-size: 15px;
-
-    line-height: 1.7;
-}
-
-.contato-links {
-    display: flex;
-
-    flex-direction: column;
-}
-
-.contato-item {
-    padding: 25px 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    border-bottom: 1px solid #222;
-
-    transition: 0.3s;
-}
-
-.contato-item:first-child {
-    border-top: 1px solid #222;
-}
-
-.contato-item span {
-    color: #777;
-
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-}
-
-.contato-item strong {
-    color: #fff;
-
-    font-size: 14px;
-
-    transition: 0.3s;
-}
-
-.contato-item:hover strong {
-    color: #39ff14;
-
-    transform: translateX(5px);
-}
-
-
-/* =========================
-   CONTATO - CELULAR
-========================= */
-
-@media (max-width: 700px) {
-
-    .contato {
-        padding: 80px 6%;
-    }
-
-    .contato-content {
+/* 15. Celulares pequenos */
+@media (max-width: 380px) {
+    #produtos {
         grid-template-columns: 1fr;
-
-        gap: 50px;
     }
 
-    .contato h2 {
-        font-size: 48px;
-
-        letter-spacing: -3px;
+    .hero h1 {
+        font-size: 2rem;
     }
 
-    .contato-item {
-        padding: 22px 0;
-    }
-
-    .contato-item strong {
-        font-size: 12px;
+    header nav {
+        gap: 10px;
     }
 }
 
-.btn-whatsapp {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 15px 25px;
-    background: #39ff14;
-    color: #000;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 4px;
-}
-
-.btn-whatsapp:hover {
-    background: #ffffff;
+/* 16. Acessibilidade: respeitar redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }
