@@ -1,165 +1,193 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LH Multimarcas</title>
+    <title>LH Multimarcas | Seu estilo, sua identidade</title>
+    <meta
+        name="description"
+        content="Conheça a LH Multimarcas. Encontre seu estilo e entre em contato para consultar nossos produtos."
+    >
+    <meta name="theme-color" content="#080808">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <a class="marca" href="#inicio" aria-label="LH Multimarcas - início">
+                <img
+                    src="imagens/logo.lh.png"
+                    alt="Logo LH Multimarcas"
+                    class="logo"
+                >
+                <span class="marca-texto">
+                    <strong>LH</strong>
+                    <span>MULTIMARCAS</span>
+                </span>
+            </a>
 
-    <header class="header">
+            <nav class="navegacao" aria-label="Navegação principal">
+                <a href="#inicio">Início</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#contato">Contato</a>
+            </nav>
 
-        <a href="index.html" class="logo">
-    <img src="imagens/logo.lh.png" alt="LH Multimarcas">
-</a>
-
-        <nav class="menu">
-            <a href="index.html">Início</a>
-            <a href="#catalogo">Catálogo</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#contato">Contato</a>
-        </nav>
-
+            <a
+                class="botao botao-cabecalho"
+                href="https://wa.me/5511987524040"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Fale conosco
+            </a>
+        </div>
     </header>
 
-
     <main>
-
-        <!-- HERO -->
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <p class="hero-subtitle">LH MULTIMARCAS</p>
+        <!-- Apresentação -->
+        <section class="hero" id="inicio">
+            <div class="container hero-conteudo">
+                <span class="etiqueta">LH MULTIMARCAS</span>
 
                 <h1>
-                    ESTILO NÃO SE COMPRA.<br>
-                    SE VESTE.
+                    SEU ESTILO.<br>
+                    <span>SUA IDENTIDADE.</span>
                 </h1>
 
                 <p>
-                    escolha seu estilo e monte seu kit.
+                    Vista sua personalidade. Encontre peças que combinam
+                    com você e mostre ao mundo o seu estilo.
                 </p>
 
-                <a href="#catalogo" class="btn">
+                <a class="botao botao-principal" href="#catalogo">
                     VER CATÁLOGO
+                    <span aria-hidden="true">→</span>
                 </a>
-
             </div>
 
+            <div class="hero-detalhe" aria-hidden="true">LH.</div>
         </section>
 
-
-        <!-- CATÁLOGO -->
-        <section id="catalogo" class="catalogo">
-
-            <div class="section-title">
-                <p>EXPLORE</p>
-                <h2>CATÁLOGO</h2>
+        <!-- Diferenciais -->
+        <section class="faixa">
+            <div class="container faixa-conteudo">
+                <span>SEU ESTILO, SUAS REGRAS</span>
+                <span class="faixa-separador" aria-hidden="true">✦</span>
+                <span>PERSONALIDADE EM CADA DETALHE</span>
             </div>
-
-            <div id="produtos" class="produtos">
-                <!-- Os produtos serão carregados pelo JavaScript -->
-            </div>
-
         </section>
 
+        <!-- Catálogo -->
+        <section class="secao catalogo" id="catalogo">
+            <div class="container">
+                <div class="secao-cabecalho">
+                    <div>
+                        <span class="etiqueta">ESCOLHA O SEU ESTILO</span>
+                        <h2>Nosso catálogo<span>.</span></h2>
+                    </div>
 
-        <!-- SOBRE -->
-        <section id="sobre" class="sobre">
+                    <p>
+                        Confira nossos produtos e entre em contato
+                        para consultar disponibilidade.
+                    </p>
+                </div>
 
-            <div class="sobre-content">
+                <div class="produtos" id="produtos">
+                    <!-- Os produtos ou a mensagem de catálogo vazio
+                         são inseridos pelo arquivo js/script.js. -->
+                    <div class="catalogo-vazio">
+                        <p>NOVOS PRODUTOS EM BREVE.</p>
+                    </div>
+                </div>
 
-                <p>LH Multimarcas</p>
+                <div class="catalogo-acao">
+                    <a
+                        class="botao botao-contorno"
+                        href="https://wa.me/5511987524040"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        CONSULTAR PRODUTOS
+                    </a>
+                </div>
+            </div>
+        </section>
 
-                <h2>
-                    MAIS QUE ROUPA.<br>
-                    UMA IDENTIDADE.
-                </h2>
+        <!-- Sobre a loja -->
+        <section class="secao sobre" id="sobre">
+            <div class="container sobre-conteudo">
+                <div class="sobre-marca" aria-hidden="true">
+                    <span>LH</span>
+                    <small>MULTIMARCAS</small>
+                </div>
+
+                <div class="sobre-texto">
+                    <span class="etiqueta">QUEM SOMOS</span>
+                    <h2>Mais que roupa.<br>Uma forma de expressão<span>.</span></h2>
+
+                    <p>
+                        A LH Multimarcas acredita que o estilo é uma forma
+                        de mostrar quem você é. Nossa proposta é oferecer
+                        opções para você expressar sua personalidade,
+                        construir sua identidade e vestir sua atitude.
+                    </p>
+
+                    <a class="link-simples" href="#contato">
+                        Conheça nossa loja <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section class="secao contato" id="contato">
+            <div class="container contato-conteudo">
+                <span class="etiqueta">VAMOS CONVERSAR?</span>
+                <h2>Seu próximo estilo começa aqui<span>.</span></h2>
 
                 <p>
-                    A LH Multimarcas nasceu para ser a fonte dos melhores kits, tenha atitude e não medo de
-                    mostrar seu estilo.
+                    Ficou interessado em algum produto?
+                    Chame a gente para tirar suas dúvidas.
                 </p>
 
+                <div class="contato-botoes">
+                    <a
+                        class="botao botao-principal"
+                        href="https://wa.me/5511987524040"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        CHAMAR NO WHATSAPP
+                    </a>
+
+                    <a
+                        class="botao botao-contorno"
+                        href="https://instagram.com/lhstreetwear.ofc"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        INSTAGRAM
+                    </a>
+                </div>
             </div>
-
         </section>
-
     </main>
 
-<!-- CONTATO -->
-
-<section id="contato" class="contato">
-
-    <div class="contato-content">
-
-        <div class="contato-texto">
-
-            <p class="contato-label">FALE CONOSCO</p>
-
-            <h2>
-                VAMOS<br>
-                CONVERSAR?
-            </h2>
-
-            <p>
-                Tem alguma dúvida sobre um produto?
-                Entre em contato com a gente.
-            </p>
-
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <a class="rodape-marca" href="#inicio">LH MULTIMARCAS</a>
+            <p>SEU ESTILO. SUA IDENTIDADE.</p>
+            <small>&copy; 2026 LH Multimarcas. Todos os direitos reservados.</small>
         </div>
-
-
-       <div class="contato-links">
-
-    <a
-        href="https://wa.me/5511987524040"
-        target="_blank"
-        class="contato-item"
-    >
-        <span>WHATSAPP</span>
-        <strong>Falar conosco →</strong>
-    </a>
-
-    <a
-        href="https://instagram.com/lhmultimarcas.ofc"
-        target="_blank"
-        class="contato-item"
-    >
-        <span>INSTAGRAM</span>
-        <strong>@lhmultimarcas.ofc →</strong>
-    </a>
-
-</div>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-    <a href="index.html" class="logo">
-    <img src="imagens/logo.lh.png" alt="LH Multimarcas">
-</a>
-
-    <p>
-        © 2026 LH Multimarcas
-    </p>
-
-</footer>
-
+    </footer>
 
     <script src="js/script.js"></script>
-
 </body>
-
 </html>
