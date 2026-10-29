@@ -806,3 +806,28 @@ a:focus-visible {
         animation-duration: 0.01ms !important;
     }
 }
+
+
+/* 14. Logos da LH Multimarcas */
+
+.logo-hero {
+    width: 180px;
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.logo-sobre {
+    width: 240px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.logo-rodape {
+    width: 140px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
